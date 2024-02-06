@@ -6,18 +6,17 @@ import mkcert from 'vite-plugin-mkcert'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/test-vapi/',
   plugins: [
     react(),
     legacy({
-      targets: ['defaults', 'not IE 11'],
-      additionalLegacyPolyfills: ['regenerator-runtime/runtime']
+      targets: ['defaults', 'not IE 11']
     }),
     mkcert(),
     babel({
       babelConfig: {
         babelrc: false,
-        configFile: false,
-        plugins: ['@babel/plugin-transform-runtime']
+        configFile: false
       }
     })
   ]

@@ -3,6 +3,7 @@
   "description": "This is a boilerplate build with Vite, React 18, TypeScript, Vitest, Testing Library, TailwindCSS 3, Eslint and Prettier.",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://danteteruk.github.io/test-vapi/",
   "author": {
     "name": "João Paulo Moraes",
     "email": "joaopaulomoraes@outlook.com",
@@ -19,7 +20,9 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "lint": "eslint src --max-warnings=0",
-    "typecheck": "tsc --project tsconfig.json --noEmit"
+    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@algolia/autocomplete-core": "^1.15.1",
@@ -35,6 +38,7 @@
     "@vapi-ai/web": "^1.0.255",
     "@vitejs/plugin-legacy": "^5.3.0",
     "@vitejs/plugin-react": "^4.2.1",
+    "gh-pages": "^6.1.1",
     "mobx": "^6.12.0",
     "mobx-react-lite": "^4.0.5",
     "natural": "^6.10.4",
