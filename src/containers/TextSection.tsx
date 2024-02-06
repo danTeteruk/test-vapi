@@ -2,7 +2,6 @@ import React, { FC, ReactNode } from 'react'
 import blurCyanImage from '../images/blur-cyan.png'
 import { observer } from 'mobx-react-lite'
 import { CandidateType } from '../state/candidate'
-import { useSpeechRecognition } from 'react-speech-recognition'
 import useVapi from '../hooks/useVapi'
 interface TextSectionProps {
   enabled?: boolean
@@ -14,7 +13,6 @@ interface TextSectionProps {
 
 export const TextSection: FC<TextSectionProps> = observer((): ReactNode => {
   const { startVapi, vapiInitialized } = useVapi()
-  const { isMicrophoneAvailable } = useSpeechRecognition()
 
   if (!vapiInitialized) {
     return (
@@ -38,12 +36,12 @@ export const TextSection: FC<TextSectionProps> = observer((): ReactNode => {
         height={530}
       />
       <div className="relative">
-        {!isMicrophoneAvailable && (
+        {!vapiInitialized && (
           <p className="inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text text-6xl ">
             Please Enable Microphone to proceed
           </p>
         )}
-        {isMicrophoneAvailable && (
+        {vapiInitialized && (
           <>
             <p className="inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text text-6xl text-transparent">
               HR screening tool
