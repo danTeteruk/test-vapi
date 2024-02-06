@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './src/styles/prism.css'
 import './src/styles/tailwind.css'
-import 'regenerator-runtime/runtime'
 const container = document.getElementById('root') as HTMLDivElement
 const root = createRoot(container)
 
