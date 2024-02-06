@@ -8,7 +8,7 @@ const root = createRoot(container)
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/test-vapi/',
 
     element: (
       <>
